@@ -5,6 +5,7 @@ function App() {
   return (
     <>
       <h1>Edu Transit Web Client!</h1>
+
     </>
   )
 }
