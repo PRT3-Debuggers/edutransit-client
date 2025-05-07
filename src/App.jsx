@@ -1,12 +1,13 @@
-import './assets/styles/App.css'
+import React from 'react';
+import Main from './components/Main';
+
 
 function App() {
 
   return (
-    <>
-      <h1>Edu Transit Web Client!</h1>
-
-    </>
+        <div>
+            <Main />
+        </div>
   )
 }
 
