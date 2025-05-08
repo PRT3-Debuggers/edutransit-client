@@ -1,16 +1,15 @@
-import './assets/styles/App.css'
-import Footer from "./views/Footer.jsx";
+import './assets/styles/App.css';
+import Footer from "./components/Footer.jsx";
 
 function App() {
-
   return (
       <div className="App">
-    <>
-      <h1>Edu Transit Web Client!</h1>
-    </>
-          <Footer/>
+        <main>
+          <h1>Edu Transit Web Client!</h1>
+        </main>
+        <Footer />
       </div>
   );
 }
 
-export default App
+export default App;
