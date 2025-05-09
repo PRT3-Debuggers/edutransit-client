@@ -1,12 +1,15 @@
-import './assets/styles/App.css'
+import React from 'react';
+import './assets/styles/App.css';
+import Navigation from './components/Navigation';
 
 function App() {
-
-  return (
-    <>
-      <h1>Edu Transit Web Client!</h1>
-    </>
-  )
+    return (
+        <>
+            <Navigation />
+            <Main />
+            <Footer />
+        </>
+    );
 }
 
-export default App
+export default App;
