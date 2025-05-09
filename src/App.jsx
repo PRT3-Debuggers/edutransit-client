@@ -6,9 +6,7 @@ function App() {
     return (
         <>
             <Navigation />
-            <div className="main-content">
-                <h1>Edu Transit Web Client!</h1>
-            </div>
+            <Main />
         </>
     );
 }
