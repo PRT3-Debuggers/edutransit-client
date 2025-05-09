@@ -1,15 +1,15 @@
+import React from 'react';
 import './assets/styles/App.css';
-import Footer from "./components/Footer.jsx";
+import Navigation from './components/Navigation';
 
 function App() {
-  return (
-      <div className="App">
-        <main>
-          <h1>Edu Transit Web Client!</h1>
-        </main>
-        <Footer />
-      </div>
-  );
+    return (
+        <>
+            <Navigation />
+            <Main />
+            <Footer />
+        </>
+    );
 }
 
 export default App;
