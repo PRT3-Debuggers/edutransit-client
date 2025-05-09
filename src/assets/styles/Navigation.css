@@ -1,0 +1,63 @@
+/* Container Styling */
+.container {
+    width: 100%;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    padding: 10px 20px;
+    background-color: #f5f5f5;
+    box-sizing: border-box;
+}
+
+/* Header Row */
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-icon {
+    margin-right: 10px;
+}
+
+/* Hamburger Button */
+.hamburger {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation Row */
+.nav-row {
+    display: none;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+/* Show menu when active */
+.nav-row.active {
+    display: flex;
+}
+
+/* Navigation Links */
+.nav-link {
+    text-decoration: none;
+    color: #333;
+    padding: 8px 0;
+    font-size: 18px;
+}
+
+/* Optional: add hover effect */
+.nav-link:hover {
+    color: #007bff;
+}
