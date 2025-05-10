@@ -1,14 +1,21 @@
 import React from 'react';
-import Main from './components/Main';
-
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import './assets/styles/App.css';
+import Navigation from './components/Navigation';
+import MainSection from './components/MainSection.jsx';
+import Footer from "./components/Footer.jsx";
+import HomePage from "./views/HomePage.jsx";
 
 function App() {
-
-  return (
-        <div>
-            <Main />
-        </div>
-  )
+    return (
+        <>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                </Routes>
+            </Router>
+        </>
+    );
 }
 
-export default App
+export default App;
