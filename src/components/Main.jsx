@@ -16,8 +16,6 @@ export default function HomePage() {
                 </p>
                 <div className="main-buttons">
                     <button onClick={() => alert('Finding available transport...')}>Find Transport</button>
-                    <button onClick={() => alert('Redirecting to registration...')}>Register Vehicle</button>
-                    <button onClick={() => alert('Available for Bookings...')}>Book Now</button>
                 </div>
             </div>
 
