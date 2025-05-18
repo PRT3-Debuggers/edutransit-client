@@ -3,7 +3,7 @@ import React from 'react';
 import SchoolBus from '../assets/schoolbus.png'; // Make sure this file exists
 import '../assets/styles/Main.css';
 
-export default function HomePage() {
+export default function MainSection() {
     return (
         <div className="main-container">
             <div className="main-text">

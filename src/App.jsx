@@ -1,8 +1,11 @@
 import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import './assets/styles/App.css';
-
 import Navigation from './components/Navigation';
+import MainSection from './components/MainSection.jsx';
+import Footer from "./components/Footer.jsx";
+import HomePage from "./views/HomePage.jsx";
+
 import Footer from './components/Footer';
 import About from './pages/About';
 import Drivers from './pages/Drivers';
@@ -16,9 +19,10 @@ function App() {
             <Navigation />
             <Main>
             <Routes>
-                <Route pathe="/about" element={<About/>}/>
-                <Route pathe="/drivers" element={<Drivers/>}/>
-                <Route pathe="/privacy" element={<PrivacyPolicy/>}/>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<About/>}/>
+                <Route path="/drivers" element={<Drivers/>}/>
+                <Route path"/privacy" element={<PrivacyPolicy/>}/>
             </Routes>
             </ Main>
             <Footer />
