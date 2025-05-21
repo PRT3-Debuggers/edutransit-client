@@ -3,13 +3,14 @@ import MainSection from "../components/MainSection.jsx";
 import Footer from "../components/Footer.jsx";
 import React from "react";
 
-
 export default function HomePage(){
     return(
         <>
-            <Navigation />
-            <MainSection />
-            <Footer />
+            <div className="App">
+                <Navigation />
+                <MainSection />
+                <Footer />
+            </div>
         </>
     )
 }
