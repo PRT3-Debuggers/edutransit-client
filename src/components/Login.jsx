@@ -2,9 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import '../assets/styles/App.css';
 import MessageModal from "../modals/MessageModal.jsx";
-import loginUser from "../scripts/signup.js";
+import loginUser from "../scripts/login.js";
 
-export default function Signup() {
+export default function Login() {
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -35,14 +35,14 @@ export default function Signup() {
     return (
         <>
             <form onSubmit={handleFormSubmit} className="formArea">
-                <h1>Sign Up</h1>
+                <h1>Login</h1>
                 <MessageModal
                     isOpen={modalOpen}
                     onClose={() => {
                         setModalOpen(false);
                         navigate("/login");
                     }}
-                    message="Account created successfully"
+                    message="Login successful"
                 />
                 <p>
                     <input
@@ -76,12 +76,12 @@ export default function Signup() {
                 </p>
                 <input
                     type="submit"
-                    value="Sign Up"
+                    value="Login"
                     className="task_addbutton"
                 />
                 <br />
-                <Link to="/login" className="LinkButton">
-                    Already have an account? Login here
+                <Link to="/signup" className="LinkButton">
+                    Dont have an account? Click here to sign up
                 </Link>
             </form>
         </>

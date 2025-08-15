@@ -1,11 +1,16 @@
+const apiUrl = import.meta.env.VITE_BASE_API_URL;
+
 async function loginUser(email, password) {
     try {
-        const response = await fetch('https://your-api-url.com/login', {
+        const response = await fetch(`${apiUrl}/users/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({
+                emailAddress: email,
+                password: password
+            })
         });
 
         if (!response.ok) {

@@ -1,6 +1,8 @@
+const apiUrl = import.meta.env.VITE_BASE_API_URL;
+
 async function signUpUser(userData) {
     try {
-        const response = await fetch("http://localhost:8080/api/users/create", {
+        const response = await fetch(`${apiUrl}/users/create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
