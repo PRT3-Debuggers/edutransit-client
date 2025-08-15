@@ -5,37 +5,50 @@ import MessageModal from "../modals/MessageModal.jsx";
 import signUpUser from "../scripts/signup.js";
 
 export default function SignUp() {
-    const [userEmail, setUserEmail] = useState("");
-    const [userPassword, setUserPassword] = useState("");
+    const [emailAddress, setEmailAddress] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [modalOpen, setModalOpen] = useState(false);
     const navigate = useNavigate();
 
-    const handleEmailChange = (e) => setUserEmail(e.target.value);
-    const handlePasswordChange = (e) => setUserPassword(e.target.value);
-    const handleConfirmPasswordChange = (e) => setConfirmPassword(e.target.value);
-
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
-        if (userPassword.length < 6) {
+        if (password.length < 6) {
             alert("Password must be at least 6 characters.");
             return;
         }
 
-        if (userPassword !== confirmPassword) {
+        if (password !== confirmPassword) {
             alert("Passwords do not match.");
             return;
         }
 
-        const result = await signUpUser(userEmail, userPassword);
-        console.log('Signup successful:', result);
+        const userData = {
+            emailAddress : emailAddress,
+            firstName: firstName,
+            lastName:lastName,
+            password: password
+        };
 
-        setUserEmail("");
-        setUserPassword("");
-        setConfirmPassword("");
+        try {
+            const result = await signUpUser(userData);
+            console.log('Signup successful:', result);
 
-        setModalOpen(true);
+            // Clear form fields
+            setEmailAddress("");
+            setFirstName("");
+            setLastName("");
+            setPassword("");
+            setConfirmPassword("");
+
+            setModalOpen(true);
+        } catch (error) {
+            console.error("Signup failed:", error);
+            alert("Error signing up. Please try again.");
+        }
     };
 
     return (
@@ -50,36 +63,62 @@ export default function SignUp() {
                     }}
                     message="Signup successful"
                 />
+
                 <p>
                     <input
-                        type="email"
-                        onChange={handleEmailChange}
-                        value={userEmail}
-                        placeholder="Email"
+                        type="text"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        placeholder="First Name"
                         required
                         className="inputText"
                     />
                 </p>
+
+                <p>
+                    <input
+                        type="text"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        placeholder="Last Name"
+                        required
+                        className="inputText"
+                    />
+                </p>
+
+                <p>
+                    <input
+                        type="email"
+                        value={emailAddress}
+                        onChange={(e) => setEmailAddress(e.target.value)}
+                        placeholder="Email Address"
+                        required
+                        className="inputText"
+                    />
+                </p>
+
                 <p>
                     <input
                         type="password"
-                        onChange={handlePasswordChange}
-                        value={userPassword}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         placeholder="Password"
                         required
                         className="inputText"
                     />
                 </p>
+
                 <p>
                     <input
                         type="password"
-                        onChange={handleConfirmPasswordChange}
                         value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
                         placeholder="Confirm Password"
                         required
                         className="inputText"
                     />
                 </p>
+
                 <input type="submit" value="Sign Up" className="task_addbutton" />
                 <br />
                 <Link to="/login" className="LinkButton">

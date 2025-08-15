@@ -1,11 +1,11 @@
-async function signUpUser(email, password) {
+async function signUpUser(userData) {
     try {
-        const response = await fetch('http:localhost/8080/signup', {
+        const response = await fetch("http://localhost:8080/api/users/create", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify(userData) // Send all fields at once
         });
 
         if (!response.ok) {
